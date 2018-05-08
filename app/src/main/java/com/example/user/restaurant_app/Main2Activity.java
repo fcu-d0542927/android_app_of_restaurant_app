@@ -115,14 +115,7 @@ public class Main2Activity extends AppCompatActivity {
             return fragment;
         }
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.tab1info, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-            return rootView;
-        }
+
     }
 
     /**
@@ -137,15 +130,46 @@ public class Main2Activity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            Fragment fragment = null;
+            switch(position){
+                case 0:
+                    fragment = new InfoFragment();
+                    break;
+                case 1:
+                    fragment = new MapFragment();
+                    break;
+                case 2:
+                    fragment = new OrderFragment();
+                    break;
+                case 3:
+                    fragment = new CaculaterFragment();
+                    break;
+
+            }
+
+            return fragment;
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
+
+        @Override
+        public CharSequence getPageTitle(int position){
+          switch(position){
+              case 0:
+                  return "資訊";
+              case 1:
+                  return "地圖";
+              case 2:
+                  return "點餐";
+              case 3:
+                  return "記帳";
+
+          }
+          return null;
+        };
     }
 }

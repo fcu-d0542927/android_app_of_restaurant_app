@@ -33,7 +33,7 @@
             android:layout_height="wrap_content">
 
             <android.support.design.widget.TabItem
-                android:id="@+id/tabItem1"
+                android:id="@+id/tabItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="資訊" />
