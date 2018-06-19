@@ -5,39 +5,69 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
-public class OrderArrayAdapter extends ArrayAdapter<OrderItem>{
+public class OrderArrayAdapter extends BaseAdapter{
 
-    Context context;
+    private List<Map<String, Object>> data;
+    private LayoutInflater layoutInflater;
+    private Context context;
 
-    public OrderArrayAdapter(Context context , ArrayList<OrderItem> items){
-        super(context, 0, items);
+    public OrderArrayAdapter(Context context , List<Map<String, Object>> data){
         this.context = context;
+        this.data = data;
+        this.layoutInflater = layoutInflater.from(context);
+    }
+
+    public final class ItemObject{
+        public ImageView imageView;
+        public TextView textView;
+    }
+
+    @Override
+    public int getCount() {
+        return data.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return data.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
     }
 
     @Override
     public View getView (int posititon, View convertView, ViewGroup parent) {
 
-        LayoutInflater inflater = LayoutInflater.from(context);
-        FrameLayout itemlayout = null;
+        ItemObject itemObject = null;
 
         if (convertView == null) {
-            itemlayout = (FrameLayout) inflater.inflate(R.layout.listitem_for_home, null);
-        } else {
-            itemlayout = (FrameLayout) convertView;
+            itemObject = new ItemObject();
+            convertView = layoutInflater.inflate(R.layout.fragment_order2,null);
+            itemObject.imageView = (ImageView)convertView.findViewById(R.id.order_image);
+            itemObject.textView = (TextView)convertView.findViewById(R.id.order_name);
+            convertView.setTag(itemObject);
+        }
+        else
+        {
+            itemObject = (ItemObject)convertView.getTag();
         }
 
-        OrderItem item = (OrderItem)getItem(posititon);
-        TextView order_name = (TextView)itemlayout.findViewById(R.id.order_name);
-        order_name.setText(item.order_name);
-        ImageView order_image = (ImageView)itemlayout.findViewById(R.id.order_image);
-        order_image.setImageResource(item.order_image);
-        return itemlayout;
-    };
+        itemObject.imageView.setBackgroundResource((Integer)data.get(posititon).get("image"));
+        itemObject.textView.setText((String)data.get(posititon).get("name"));
+
+        return convertView;
+
+    }
 }
