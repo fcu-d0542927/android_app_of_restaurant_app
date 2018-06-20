@@ -33,7 +33,7 @@ public class OrderFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_order, container, false);
-        listview = (ListView) view.findViewById(R.id.gv);
+        listview = (ListView) view.findViewById(R.id.lv_order);
 
         List<Map<String, Object>> list = getdata();
         listview.setAdapter(new OrderArrayAdapter(getActivity(), list));
@@ -44,14 +44,16 @@ public class OrderFragment extends Fragment {
     public List<Map<String, Object>> getdata()
     {
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-        int[] imagArr;
-        String nameArr;
+        int[] imagArr = {R.drawable.order1, R.drawable.order2, R.drawable.order3, R.drawable.order4, R.drawable.order5,
+                R.drawable.order6, R.drawable.order7, R.drawable.order8, R.drawable.test};
+        String[] nameArr = {"煙燻培根起司蛋黃", "蒜辣燻雞蟹肉", "大盤雞", "玫瑰海鮮豬肉炒花香醬", "微辣番茄黃咖哩雞",
+                "檸香法式海陸雙拼", "肉醬濃起司培根蛋黃", "經典粉紅肉醬", "testOrder"};
 
-        for(int i=0; i<10 ; i++)
+        for(int i=0; i<9 ; i++)
         {
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("image", R.drawable.ic_launcher_background);
-            map.put("name", "tag"+i);
+            map.put("image", imagArr[i]);
+            map.put("name", nameArr[i]);
             list.add(map);
         }
         return list;

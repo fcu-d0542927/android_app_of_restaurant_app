@@ -4,14 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -54,7 +50,7 @@ public class OrderArrayAdapter extends BaseAdapter{
 
         if (convertView == null) {
             itemObject = new ItemObject();
-            convertView = layoutInflater.inflate(R.layout.fragment_order2,null);
+            convertView = layoutInflater.inflate(R.layout.fragment_order_item,null);
             itemObject.imageView = (ImageView)convertView.findViewById(R.id.order_image);
             itemObject.textView = (TextView)convertView.findViewById(R.id.order_name);
             convertView.setTag(itemObject);
