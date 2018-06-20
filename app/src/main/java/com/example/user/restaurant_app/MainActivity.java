@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
        ArrayList<AlbumItem> albumlist = new ArrayList<AlbumItem>();
 
-       albumlist.add(new AlbumItem("隨義煮"));
+       albumlist.add(new AlbumItem("隨義煮",R.drawable.pic_for_restaurant));
 
        AlbumArrayAdapter adapter = new AlbumArrayAdapter(this,albumlist);
 

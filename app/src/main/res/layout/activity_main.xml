@@ -15,8 +15,11 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="餐廳"
-            android:textSize="20dp"/>
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <ListView
             android:id="@+id/list"

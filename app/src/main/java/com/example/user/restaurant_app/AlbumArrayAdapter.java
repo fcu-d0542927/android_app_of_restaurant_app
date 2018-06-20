@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -34,6 +35,9 @@ public class AlbumArrayAdapter extends ArrayAdapter<AlbumItem> {
 
         TextView tv_restname = (TextView) itemlayout.findViewById(R.id.tv_name);
         tv_restname.setText(item.name);
+
+        ImageView iv_restpic = (ImageView) itemlayout.findViewById(R.id.iv_restpic);
+        iv_restpic.setImageResource(item.imgid);
 
         return itemlayout;
     }

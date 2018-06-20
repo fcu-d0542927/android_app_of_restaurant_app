@@ -48,7 +48,7 @@
                 android:id="@+id/tabItem3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="點餐" />
+                android:text="菜單" />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem4"

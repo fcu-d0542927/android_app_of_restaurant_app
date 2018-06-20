@@ -1,8 +1,10 @@
 package com.example.user.restaurant_app;
 
+import android.content.DialogInterface;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -77,7 +79,19 @@ public class Main2Activity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            AlertDialog.Builder ad  = new AlertDialog.Builder(this);
+            ad.setTitle("About this APP");
+            ad.setMessage("Author:黃昱凱 Yu-Kai Huang \n             陳鈴雅 Ling-Ya Chen \n             林思言 Ssu-Yan Lin");
+
+
+            DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                }
+            };
+
+            ad.setPositiveButton("確定",listener);
+            ad.show();
         }
 
         return super.onOptionsItemSelected(item);
@@ -157,7 +171,7 @@ public class Main2Activity extends AppCompatActivity {
               case 1:
                   return "地圖";
               case 2:
-                  return "點餐";
+                  return "菜單";
               case 3:
                   return "記帳";
 

@@ -25,7 +25,9 @@
             android:layout_height="37dp"
             android:text="隨義煮"
             android:textAlignment="center"
-            android:textSize="60px" />
+            android:textColor="#FF6347"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView2"
@@ -33,6 +35,7 @@
             android:layout_height="wrap_content"
             android:text="地址: 407台中市西屯區西安街183號"
             android:textAlignment="center"
+            android:textColor="#000000"
             android:textSize="48px" />
     </LinearLayout>
 </FrameLayout>
