@@ -45,11 +45,11 @@ public class OrderFragment extends Fragment {
     {
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
         int[] imagArr = {R.drawable.order1, R.drawable.order2, R.drawable.order3, R.drawable.order4, R.drawable.order5,
-                R.drawable.order6, R.drawable.order7, R.drawable.order8, R.drawable.test};
+                R.drawable.order6, R.drawable.order7, R.drawable.order8};
         String[] nameArr = {"煙燻培根起司蛋黃", "蒜辣燻雞蟹肉", "大盤雞", "玫瑰海鮮豬肉炒花香醬", "微辣番茄黃咖哩雞",
-                "檸香法式海陸雙拼", "肉醬濃起司培根蛋黃", "經典粉紅肉醬", "testOrder"};
+                "檸香法式海陸雙拼", "肉醬濃起司培根蛋黃", "經典粉紅肉醬"};
 
-        for(int i=0; i<9 ; i++)
+        for(int i=0; i<8 ; i++)
         {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("image", imagArr[i]);
