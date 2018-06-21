@@ -7,4 +7,9 @@
         android:orderInCategory="100"
         android:title="About this App"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_caculater"
+        android:orderInCategory="100"
+        android:title="Caculater"
+        app:showAsAction="never" />
 </menu>
